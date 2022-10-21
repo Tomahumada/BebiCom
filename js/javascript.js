@@ -9,16 +9,16 @@ let tipoSalsa;
 
 function bienvenida() {
 	let nombre = prompt('Hola Soy BebiCom ¿cual es tu nombre?');
-	let horarioCo = prompt('Hola ' + nombre + ' Que deseas adquirir \n1-Desayuno\n2-Almuerzo');
-	return horarioCo;
+	let horarioCo = parseInt(prompt('Hola ' + nombre + ' Que deseas adquirir \n1-Desayuno\n2-Almuerzo'));
+	return {
+        horario: horarioCo,
+        nombre: nombre
+    }
 }
+const {horario, nombre} = bienvenida();
 
-let horario = bienvenida();
-bienvenida();
-for (let i = 0; i < 1; i++) {
 	switch (horario) {
-		case 'desayuno':
-		case '1':
+		case 1:
 			preTrago = prompt('Bienvenido ' + nombre + ' ¿deseas comprar una bebida para su desayuno?');
 			if (preTrago == 'Si' || preTrago == 'si' || preTrago == 'SI') {
 				trago = prompt('¿Que bebida deseas?\n 1-Cafe\n 2-Te\n 3-Capuccino\n 4-Chocolatte\n 5-Cafe con leche\n 6-Cafe descafeinado\n 7-Mate cocido');
@@ -169,8 +169,7 @@ for (let i = 0; i < 1; i++) {
 			};
 			break;
 
-		case 'almuerzo':
-		case '2':
+		case 2:
 			preTrago = prompt('Bienvenido ' + nombre + ' ¿deseas comprar una bebida para su almuerzo?');
 			if (preTrago == 'Si' || preTrago == 'si' || preTrago == 'SI') {
 				trago = prompt('¿Que bebida deseas?\n1-Coca Cola\n2-Sprite\n3-Cerveza o pinta\n 4-Vino\n 5-Agua saborizada\n 6-Agua\n 7-Soda');
@@ -258,4 +257,3 @@ for (let i = 0; i < 1; i++) {
 			alert('esa opcion es incorrecta');
 	}
 
-}
