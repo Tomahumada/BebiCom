@@ -16,7 +16,6 @@ function bienvenida() {
     }
 }
 const {horario, nombre} = bienvenida();
-
 	switch (horario) {
 		case 1:
 			preTrago = prompt('Bienvenido ' + nombre + ' ¿deseas comprar una bebida para su desayuno?');
