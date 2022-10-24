@@ -9,15 +9,22 @@ let tipoSalsa;
 
 function bienvenida() {
 	let nombre = prompt('Hola Soy BebiCom ¿cual es tu nombre?');
-	let horarioCo = parseInt(prompt('Hola ' + nombre + ' Que deseas adquirir \n1-Desayuno\n2-Almuerzo'));
+	let horarioCo = prompt('Hola ' + nombre + ' Que deseas adquirir \n1-Desayuno\n2-Almuerzo');
 	return {
         horario: horarioCo,
         nombre: nombre
     }
 }
-const {horario, nombre} = bienvenida();
+	let respuesta = prompt('desesa realizar un pedido?');
+	if(respuesta == 'no'){
+		alert('Ok que disfrutes tu dia');
+	}else{
+	const {horario, nombre} = bienvenida();
+	}
+while(respuesta == 'si'){
 	switch (horario) {
-		case 1:
+		case '1':
+		case 'desayuno':
 			preTrago = prompt('Bienvenido ' + nombre + ' ¿deseas comprar una bebida para su desayuno?');
 			if (preTrago == 'Si' || preTrago == 'si' || preTrago == 'SI') {
 				trago = prompt('¿Que bebida deseas?\n 1-Cafe\n 2-Te\n 3-Capuccino\n 4-Chocolatte\n 5-Cafe con leche\n 6-Cafe descafeinado\n 7-Mate cocido');
@@ -100,7 +107,7 @@ const {horario, nombre} = bienvenida();
 				}
 			}
 			else if (preTrago == 'No' || preTrago == 'no' || preTrago == 'NO') {
-				alert('cagate de sed');
+				alert('vas a tener sed');
 			}
 
 			prepaComida = prompt('¿desearia algo para comer en su desayuno?');
@@ -168,7 +175,8 @@ const {horario, nombre} = bienvenida();
 			};
 			break;
 
-		case 2:
+		case '2':
+		case 'almuerzo':
 			preTrago = prompt('Bienvenido ' + nombre + ' ¿deseas comprar una bebida para su almuerzo?');
 			if (preTrago == 'Si' || preTrago == 'si' || preTrago == 'SI') {
 				trago = prompt('¿Que bebida deseas?\n1-Coca Cola\n2-Sprite\n3-Cerveza o pinta\n 4-Vino\n 5-Agua saborizada\n 6-Agua\n 7-Soda');
@@ -255,4 +263,5 @@ const {horario, nombre} = bienvenida();
 		default:
 			alert('esa opcion es incorrecta');
 	}
-
+	respuesta = prompt('desesa realizar otro pedido?');
+}
